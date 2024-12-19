@@ -2,7 +2,7 @@ import OracleDB from "oracledb";
 
 OracleDB.outFormat = OracleDB.OUT_FORMAT_OBJECT;
 
-async function fun() {
+async function testCon() {
     let con;
     try {
         con = await OracleDB.getConnection({
@@ -17,4 +17,5 @@ async function fun() {
         console.error(err);
     }
 }
-fun();
+
+export default testCon();

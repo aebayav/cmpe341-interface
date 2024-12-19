@@ -6,13 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "env-cmd nodemon server.js",
-    "testDbCon" : "env-cmd node dbConnectionTest.js"
+    "testDbCon": "env-cmd node dbConnectionTest.js"
   },
   "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "env-cmd": "^10.1.0",
     "express": "^4.21.2",
     "nodemon": "^3.1.9",
