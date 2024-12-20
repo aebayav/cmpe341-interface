@@ -2,13 +2,13 @@ import OracleDB from "oracledb";
 
 OracleDB.outFormat = OracleDB.OUT_FORMAT_OBJECT;
 
-async function testCon() {
+async function testCon(dbUser,dbPass,conString) {
     let con;
     try {
         con = await OracleDB.getConnection({
-            user: process.env.db_user,
-            password: process.env.db_pass,
-            connectionString: process.env.conString
+            user: dbUser,
+            password: dbPass,
+            connectionString: conString
             
         })
         console.log("Connection established successfuly!")
@@ -16,6 +16,7 @@ async function testCon() {
     catch (err){
         console.error(err);
     }
-}
+};
 
-export default testCon();
+export default testCon;
+

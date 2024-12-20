@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Car System</title>
+</head>
+<body>
+    <header><h3>RENTAL CAR SYSTEM</h3></header>
+    <div id="car-div">
+        <!-- burası javascript ile gelecek ve araçları buraya yerleştiricez -->
+
+    </div>
+    <div id="car-rent-info">
+        <label for="car-rent-start-date"></label><!-- buraya Javascript kodu gelecek o günün tarihini min olarak vericek-->
+        <input type="date" name="car-rent-start-date" id="car-rent-start-date">
+        <label for="car-rent-end-date"></label><!-- buraya Javascript kodu gelecek o günün tarihini min olarak vericek-->
+        <input type="date" name="car-rent-end-date" id="car-rent-end-date">
+        <label for="car-insurance-type"></label>
+        <select id="car-insurance-type">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+        </select>
+    </div>
+    <div id="payment-div">
+        <form id="payment-form">
+            <label for="cc-owner">Name of Credit Card Owner: </label>
+            <input type="text" id="cc-owner" maxlength="50" required>
+            <label for="cc-number">Credit Card Number :</label>
+            <input type="text" id="cc-number" id="cc-number" inputmode="numeric" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" required>
+            <label for="cc-date">Credit Card Validity Date: </label>
+            <input type="date" id="cc-date" required><!-- buraya Javascript kodu gelecek o günün tarihini min olarak vericek-->
+            <label for="cc-security-code">CCV Code: </label>
+            <input type="text" min="3" max="3" id="cc-security-code" required >
+        </form>
+        <br>
+        <button type="submit" id="payment-btn">Make Payment</button><!--Burda payment işlemi bitiyor ödeme başarılı sayfasına redirect atıcak-->
+    </div>
+</body>
+</html>
