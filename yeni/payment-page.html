@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RENT A CAR</title>
+</head>
+<body>
+    <div id="main-div"> 
+        <div id="info-div">   
+
+            <div id="text1">
+                <h2>Car Information</h2>
+            </div>
+
+            <div id="car-info">
+
+                <div id="car-image">
+                    <img src="images/car1.png" alt="Car Image">
+                </div>
+
+                <div class="input-container">
+                    <label for="car-name">Car Name: </label>
+                    dbden çekilecek
+                </div>
+                <div class="input-container">
+                    <label for="car-price">Price: </label>
+                    dbden çekilecek
+                </div>
+                <div class="input-container">
+                    <label for="car-rent-date">Rent Date: </label>
+                    dbden çekilecek
+                </div>
+                <div class="input-container">
+                    <label for="car-return-date">Return Date: </label>
+                    dbden çekilecek
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="payment">
+            <div id="text1">
+                <h2>Payment Information</h2>
+            <div id="payment-div">
+
+                <form id="payment-form">
+                    <div class="input-container">
+                        <label for="cc-owner">Name of Credit Card Owner: </label>
+                        <input type="text" id="cc-owner" maxlength="50" required>
+                    </div>
+                    <div class="input-container">
+                        <label for="cc-number">Credit Card Number :</label>
+                        <input type="text" id="cc-number" inputmode="numeric" placeholder="XXXX XXXX XXXX XXXX" maxlength="19" required>
+                    </div>
+                    <div class="input-container">
+                        <label for="cc-date">Credit Card Validity Date: </label>
+                        <input type="text" id="cc-date" required>
+                    </div>
+                    <div class="input-container">
+                        <label for="cc-security-code">CCV Code: </label>
+                        <input type="text" id="cc-security-code" maxlength="3" required>
+                    </div>
+                </form>
+                <button type="submit" id="payment-btn">Make Payment</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript ile bugünün tarihini min olarak ayarlama
+        document.getElementById('cc-date').setAttribute('min', new Date().toISOString().split('T')[0]);
+    </script>
+</body>
+</html>
