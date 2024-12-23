@@ -246,3 +246,62 @@ body {
     transform: scale(1.05); /* Hover durumunda hafif büyüme */
     transition: transform 0.3s ease; /* Geçiş efekti */
 }
+
+
+
+#get-customerId {
+    margin-top: 20px; /* Üst boşluk */
+    margin-left: 50px; /* Sol boşluk */
+    margin-right: 50px; /* Sağ boşluk */
+    padding: 20px; /* İç boşluk */
+    background-color: #f8f9fa; /* Açık gri arka plan */
+    border: 1px solid #ddd; /* Açık gri çerçeve */
+    border-radius: 5px; /* Köşeleri yuvarla */
+}
+
+#get-customerId label {
+    color: #000;
+    font-weight: bold; /* Kalın yazı */
+    margin-bottom: 5px; /* Alt boşluk */
+}
+
+#get-customerId input[type="text"] {
+    width: 400px; /* Genişlik */
+    padding: 10px; /* İç boşluk */
+    font-size: 16px; /* Yazı boyutu */
+    border: 2px solid #ddd; /* Çerçeve rengi */
+    border-radius: 5px; /* Köşeleri yuvarla */
+    margin-bottom: 15px; /* Alt boşluk */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* İç gölge efekti */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Geçiş efekti */
+}
+
+#get-customerId input[type="text"]:focus {
+    border-color: #007bff; /* Odaklanınca mavi çerçeve */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Mavi dış gölge */
+    outline: none; /* Varsayılan outline'ı kaldır */
+}
+
+#get-customerId input[type="submit"] {
+    width: 457px; /* Genişlik */
+    padding: 10px; /* İç boşluk */
+    font-size: 16px; /* Yazı boyutu */
+    font-weight: bold; /* Yazıyı kalın yap */
+    background-color: #007bff; /* Varsayılan mavi arka plan */
+    color: #ffffff; /* Beyaz yazı rengi */
+    border: none; /* Çerçeve kaldır */
+    border-radius: 8px; /* Köşeleri yuvarla */
+    cursor: pointer; /* Fare imlecini el yap */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Geçiş ve efekt */
+}
+
+#get-customerId input[type="submit"]:hover {
+    background-color: #0056b3; /* Hover efekti için koyu mavi */
+    transform: scale(1.05); /* Hover sırasında hafif büyüt */
+}
+
+#get-customerId input[type="submit"]:active {
+    background-color: #003d80; /* Tıklama efekti için daha koyu mavi */
+    transform: scale(0.95); /* Tıklarken hafif küçült */
+}
+
