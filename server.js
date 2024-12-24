@@ -13,8 +13,8 @@ const dbUser = process.env.db_user;
 const dbPass = process.env.db_pass;
 const conString = process.env.conString;
 
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
 app.use(catchError);
 app.use("/user", userRoute);
 

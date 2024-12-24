@@ -1,11 +1,10 @@
 import OracleDB from "oracledb";
-import { initDbPool} from "../database/database.js";
-import express from "express"
 import { tryCatchWrapper } from "../middlewares/tryCatchWrapper.js";
+import { json } from "express";
 
 export const getAllCars = tryCatchWrapper( async function(req, res) {
     let connection = await OracleDB.getConnection();
-    let query = "SELECT * FROM car";
+    let query = "SELECT * FROM cars";
     let result = await connection.execute(query);
     const rows = result.rows;
     if(!rows.length){
@@ -13,32 +12,69 @@ export const getAllCars = tryCatchWrapper( async function(req, res) {
     }
     
     connection.close();
-    return res.status(200).json({employees: rows});
+    return res.status(200).json({cars: rows});
 });
 
 export const getAvailableCars = tryCatchWrapper(async function (req, res) {
-    const {start_date, end_date} = req.body;
-    let query = `SELECT carid FROM Cars 
-    WHERE date1 >= TO_DATE(${start_date}, "DD-MM-YYYY"),
-        AND date2 <= TO_DATE(${end_date},"DD-MM-YYYY");`
+    
+    let query = `SELECT * FROM car WHERE status = 'available'`;
+    let connection = await OracleDB.getConnection();
+    let result = await connection.execute(query)
+    let rows = result.rows;
+    connection.close();
+    return res.status(201).json({availableCars: rows});
+})
+
+//BU FONKSİYON DÜZELTİLECEK
+export const addNewRent = tryCatchWrapper(async function (req,res){
+    const {customerid, contact_number} = req.body;
+    const query = `
+    UPDATE customers 
+    SET CONTACTNUMBER = :contact_number 
+    WHERE CUSTOMERID = :customerid`;
+    console.log(customerid,contact_number)
+    let connection = await OracleDB.getConnection();
+    connection.execute(query, { contact_number, customerid } );
+    connection.commit()
+    connection.close();
+    return res.status(200).json({message:"Entity altered successfuly"})
+})
+
+//BU FONKSİYON DÜZENLENECEK
+export const deleteRent = tryCatchWrapper(async function (req,res) {
+    const {customerid} = req.body;
+    const query = `
+    UPDATE cars
+    SET availability = 'available' 
+    WHERE CUSTOMERID = :customerid`;
+    console.log(customerid,contact_number)
+    let connection = await OracleDB.getConnection();
+    connection.execute(query, {customerid } );
+    connection.commit()
+    connection.close();
+    return res.status(200).json({message:"Entity altered successfuly"})
+    
+});
+
+export const getCarById = tryCatchWrapper(async function (req,res){
+    const {carid} = req.body;
+    const query = `SELECT * FROM cars WHERE carid = :carid`;
+    let connection = await OracleDB.getConnection();
+    let results = await connection.execute(query, {carid});
+    let data = results.rows;
+    connection.close()
+    return res.status(200).json({cars: data});
+
+});
+
+export const getRentedCars = tryCatchWrapper(async function (req, res) {
+    
+    let query = `SELECT * FROM Cars 
+    WHERE availability == 0;`
     let connection = await OracleDB.getConnection();
     let result = await connection.execute(query)
     let rows = result.rows;
     connection.close();
     return res.status(201).json({availableCars: `${rows}`});
-})
-
-export const addNewRent = tryCatchWrapper(async function (req,res){
-    const {carid, start_date, end_date} = req.params;
-    let query =  `UPDATE Car 
-    SET start_date = :start_date, end_date = :end_date,
-    WHERE carid = :carid`
-    
-    let connection = await OracleDB.getConnection();
-    connection.execute(query, {start_date: start_date,
-        end_date: end_date,
-        carid: carid});
-    connection.close();
-    return res.status(204).json({message:"Entity altered successfuly"})
 })
 
