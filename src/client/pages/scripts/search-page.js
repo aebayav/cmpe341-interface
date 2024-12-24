@@ -31,11 +31,11 @@ window.addEventListener('DOMContentLoaded', function(){
         cars.forEach(car => {
             const div = document.createElement('div');
             div.setAttribute("class", "car-card");
-            div.innerHTML =  `<img src="images/car2.jpg" alt="Car Image" class="car-img">
+            div.innerHTML =  `<img src="images/${car.CARID}.png" alt="Car Image" class="car-img">
                                 <div class="car-info">
                             <h3>Brand: ${car.BRAND}</h3>
                             <p>Model: ${car.CARMODEL}</p>
-                            <p>Year: ${car.CARYEAR}/p>
+                            <p>Year: ${car.CARYEAR}</p>
                             <p></p>
                             </div>`
 
