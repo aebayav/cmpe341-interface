@@ -213,7 +213,7 @@ body {
 }
 
 .car-card {
-    width: calc(32% - 7px); /* 4 kart yan yana olacak şekilde genişlik ayarı */
+    width: calc(50% - 10px); /* 4 kart yan yana olacak şekilde genişlik ayarı */
     box-sizing: border-box;
     cursor: pointer;
     border: 1px solid #ccc; /* Sınır ekleyerek kartları belirginleştirebilirsiniz */
