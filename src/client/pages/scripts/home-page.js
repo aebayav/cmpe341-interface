@@ -15,7 +15,7 @@ button.addEventListener('click', () => {
     console.log(end_date)
     console.log(daysDiff)
 
-    sessionStorage.clear()
+    sessionStorage.clear();
     sessionStorage.setItem("start_date",start_date);
     sessionStorage.setItem("end_date", end_date);
     sessionStorage.setItem("daysDiff", daysDiff);

@@ -30,7 +30,7 @@ export const getUnavailableCars = tryCatchWrapper(async function (req, res) {
     let result = await connection.execute(query)
     let rows = result.rows;
     connection.close();
-    return res.status(201).json({availableCars: rows});
+    return res.status(201).json({unavailableCars: rows});
 })
 
 
@@ -48,12 +48,12 @@ export const getPayment = tryCatchWrapper(async function (req,res){
 export const setAvailable = tryCatchWrapper(async function (req,res) {
     const {carid} = req.body;
     const query = `
-    UPDATE cars
+    UPDATE car
     SET STATUS = 'available' 
     WHERE carid = :carid`;
     console.log(carid)
     let connection = await OracleDB.getConnection();
-    connection.execute(query, {carid } );
+    connection.execute(query, {carid} );
     connection.commit()
     connection.close();
     return res.status(200).json({message:"Entity altered successfuly"})
@@ -93,6 +93,25 @@ export const addNewTransaction = tryCatchWrapper(async function (req,res) {
     connection.close();
     return res.status(201).json({message:"New transaction added successfuly"});
 
+})
+
+export const addCar = tryCatchWrapper(async function (req,res) {
+    const {carid,brand,carmodel,caryear,rentaldate} = req.body;
+    let query = `INSERT INTO CAR (${carid},${brand},${carmodel},${caryear},NULL,NULL,${rentaldate})`;
+    let connection = await OracleDB.getConnection();
+    connection.execute(query);
+    connection.close()
+    return res.status(201).json({message: "New car added to db"})
+})
+
+export const deleteCar = tryCatchWrapper(async function (req,res) {
+    const {carid} = req.body;
+    let query = `DELETE FROM car WHERE carid =:carid`;
+    let connection = await OracleDB.getConnection();
+    connection.execute(query, {carid});
+    connection.commit();
+    connection.close();
+    return res.status(201).json({message: "Car deleted from db"});
 })
 
 

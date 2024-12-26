@@ -1,12 +1,16 @@
 import express from "express"
-import {addNewTransaction, deleteLatestTransaction, getAllCars, getAvailableCars, getCarById, getPayment, setAvailable } from "../controllers/user.controllers.js"
+import {addCar, addNewTransaction, deleteCar, deleteLatestTransaction, getAllCars, getAvailableCars, getCarById, getPayment, getUnavailableCars, setAvailable } from "../controllers/user.controllers.js"
 
 const router = express.Router();
 router.route('/').get(getAllCars);
 router.route('/rent').get(getAvailableCars);
 router.route('/newrent').patch(getPayment);
-router.route('/deleteRent').delete(setAvailable);
+router.route('/setAvailable').post(setAvailable);
 router.route('/payment/:carid').get(getCarById).delete(deleteLatestTransaction);
 router.route('/payment/new').post(addNewTransaction)
+router.route('/delete').get(getUnavailableCars)
+router.route('/admin').get(getAllCars);
+router.route('/admin/add').post(addCar);
+router.route('/admin/delete').delete(deleteCar)
 
 export default router
