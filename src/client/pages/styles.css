@@ -305,3 +305,141 @@ body {
     transform: scale(0.95); /* Tıklarken hafif küçült */
 }
 
+#car-list {
+    display: flex; /* Flexbox kullan */
+    flex-direction: row; /* Elemanları yan yana düzenle */
+    align-items: center; /* Elemanları dikeyde ortala */
+    gap: 10px; /* Elemanlar arasındaki boşluk */
+    color: #000; /* Siyah renk */
+    margin: 20px auto; /* Ortala */
+    padding: 20px; /* İç boşluk */
+    max-width: 600px; /* Genişliği sınırla */
+    background-color: #f8f9fa; /* Açık gri arka plan */
+    border-radius: 10px; /* Köşeleri yuvarla */
+}
+
+
+#car-list ul li button.admin-button {
+    padding: 5px 15px; /* İç boşluk */
+    font-size: 16px; /* Yazı boyutu */
+    background-color: #007bff; /* Mavi arka plan */
+    color: #fff; /* Beyaz yazı rengi */
+    border: none; /* Çerçeve kaldır */
+    border-radius: 5px; /* Köşeleri yuvarla */
+    cursor: pointer; /* Fare imlecini değiştir */
+    transition: background-color 0.3s ease; /* Geçiş efekti */
+    margin-bottom: 10px; /* Adds space below each list item */
+
+}
+
+
+#adding-car {
+    display: flex; /* Flexbox kullan */
+    flex-direction: row; /* Elemanları yan yana düzenle */
+    align-items: center; /* Elemanları dikeyde ortala */
+    gap: 10px; /* Elemanlar arasındaki boşluk */
+    color: #000; /* Siyah renk */
+    margin: 20px auto; /* Ortala */
+    padding: 20px; /* İç boşluk */
+    max-width: 600px; /* Genişliği sınırla */
+    background-color: #f8f9fa; /* Açık gri arka plan */
+    border-radius: 10px; /* Köşeleri yuvarla */
+}
+
+#add-car-form label {
+    font-weight: bold; /* Kalın yazı tipi */
+    margin-bottom: 5px; /* Alt boşluk */
+    display: block; /* Etiketi tam genişlikte göster */
+}
+
+
+#add-car-form input {
+    flex-grow: 1; /* Esneklik */
+    max-width: 400px; /* Maksimum genişlik */
+    padding: 10px; /* İç boşluk */
+    border: 1px solid #ccc; /* Gri çerçeve */
+    border-radius: 5px; /* Köşeleri yuvarla */
+    box-sizing: border-box; /* Çerçeve ve padding dahil genişliği kontrol et */
+    margin-bottom: 10px; /* Adds space below each list item */
+    
+}
+#add-car-form label {
+    font-weight: bold; /* Kalın yazı tipi */
+    margin-right: 10px; /* Sağ boşluk */
+    display: inline-block; /* Inline-block display for label */
+}
+
+#add-car-form input {
+    max-width: 400px; /* Maksimum genişlik */
+    padding: 10px; /* İç boşluk */
+    border: 1px solid #ccc; /* Gri çerçeve */
+    border-radius: 5px; /* Köşeleri yuvarla */
+    box-sizing: border-box; /* Çerçeve ve padding dahil genişliği kontrol et */
+    margin-bottom: 10px; /* Adds space below each input item */
+}
+
+/* Wrap each label-input pair in a div with this class */
+.add-car-form-group {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Vertically center items */
+    margin-bottom: 10px; /* Space between form groups */
+}
+
+
+#add-car-form button:hover {
+    background-color: #0056b3; /* Daha koyu mavi */
+}
+
+#add-car-form {
+    display: flex;
+    flex-direction: column; /* Stack form groups vertically */
+}
+
+.form-group {
+    display: flex;
+    align-items: center; /* Vertically center items */
+    margin-bottom: 10px; /* Space between form groups */
+}
+
+.form-group label {
+    width: 120px; /* Fixed width for labels, adjust as needed */
+    margin-right: 10px; /* Space between label and input */
+}
+
+.form-group input {
+    flex-grow: 1; /* Input will take remaining space */
+}
+#add-car-form {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Two columns: one for labels, one wider for inputs */
+    gap: 1px 3px; /* Vertical and horizontal gap between grid items */
+}
+
+#add-car-form label {
+    grid-column: 1 / 2; /* Labels in the first column */
+    text-align: right; /* Align text to the right */
+    padding-right: 10px; /* Space between label and input */
+}
+
+#add-car-form input {
+    grid-column: 2 / 3; /* Inputs in the second column */
+    width: 100%; /* Full width of the second column */
+}
+
+#add-car-form button {
+    padding: 10px 20px; /* İç boşluk */
+    font-size: 16px; /* Yazı boyutu */
+    background-color: #007bff; /* Mavi arka plan */
+    color: #fff; /* Beyaz yazı rengi */
+    border: none; /* Çerçeve kaldır */
+    border-radius: 5px; /* Köşeleri yuvarla */
+    cursor: pointer; /* Fare imlecini değiştir */
+    transition: background-color 0.3s ease; /* Geçiş efekti */
+    margin-top: 10px; /* Space above the button */
+    width: 100%; /* This makes the button span the full width */
+    box-sizing: border-box; /* Padding ve border dahil genişlik */
+}
+
+#car-list ul li button.admin-button:hover {
+    background-color: #0056b3; /* Daha koyu mavi */
+}
