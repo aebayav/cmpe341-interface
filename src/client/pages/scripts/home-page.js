@@ -6,13 +6,21 @@ document.getElementById("car-rent-end-date").setAttribute("min",currentDate) //S
 const button = document.getElementById("submit-button");
 
 button.addEventListener('click', () => {
-    const avail_start_date = document.getElementById("car-rent-start-date").value;
-    const avail_end_date = document.getElementById("car-rent-end-date").value;
-    
+    const start_date = document.getElementById("car-rent-start-date").value;
+    const end_date = document.getElementById("car-rent-end-date").value;
+    const tempDate1 = new Date(start_date);
+    const tempDate2 = new Date(end_date);
+    const daysDiff =   Math.round((tempDate2.getTime() - tempDate1.getTime()) / (1000 * 3600 * 24));
+    console.log(start_date)
+    console.log(end_date)
+    console.log(daysDiff)
+
     sessionStorage.clear()
-    sessionStorageStorage.setItem("avail_start_date",avail_start_date);
-    sessionStoragetorage.setItem("avail_end_date",avail_end_date);
+    sessionStorage.setItem("start_date",start_date);
+    sessionStorage.setItem("end_date", end_date);
+    sessionStorage.setItem("daysDiff", daysDiff);
     
+
     
 });
 

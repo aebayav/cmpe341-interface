@@ -1,10 +1,10 @@
 import OracleDB from "oracledb";
 import { tryCatchWrapper } from "../middlewares/tryCatchWrapper.js";
-import { json } from "express";
+import {json} from "express"
 
 export const getAllCars = tryCatchWrapper( async function(req, res) {
     let connection = await OracleDB.getConnection();
-    let query = "SELECT * FROM cars";
+    let query = "SELECT * FROM car";
     let result = await connection.execute(query);
     const rows = result.rows;
     if(!rows.length){
@@ -16,7 +16,6 @@ export const getAllCars = tryCatchWrapper( async function(req, res) {
 });
 
 export const getAvailableCars = tryCatchWrapper(async function (req, res) {
-    
     let query = `SELECT * FROM car WHERE status = 'available'`;
     let connection = await OracleDB.getConnection();
     let result = await connection.execute(query)
@@ -25,31 +24,27 @@ export const getAvailableCars = tryCatchWrapper(async function (req, res) {
     return res.status(201).json({availableCars: rows});
 })
 
-//BU FONKSİYON DÜZELTİLECEK
-export const addNewRent = tryCatchWrapper(async function (req,res){
-    const {customerid, contact_number} = req.body;
-    const query = `
-    UPDATE customers 
-    SET CONTACTNUMBER = :contact_number 
-    WHERE CUSTOMERID = :customerid`;
-    console.log(customerid,contact_number)
+
+export const getPayment = tryCatchWrapper(async function (req,res){
+    const {paymentid, paymentmethod, amount, paymentdate} = req.body;
+    let query = `INSERT INTO payment(PAYMENTID,PAYMENTMETHOD,AMOUNT,PAYMENTDATE)
+                VALUES(:PAYMENTID,:PAYMENTMETHOD,:AMOUNT,:PAYMENTDATE);`
     let connection = await OracleDB.getConnection();
-    connection.execute(query, { contact_number, customerid } );
-    connection.commit()
-    connection.close();
-    return res.status(200).json({message:"Entity altered successfuly"})
+    connection.execute(query, {paymentid,paymentmethod,amount,paymentdate});
+    connection.close()
+    return res.status(201).json({message: "New payment added to table"})
 })
 
-//BU FONKSİYON DÜZENLENECEK
-export const deleteRent = tryCatchWrapper(async function (req,res) {
-    const {customerid} = req.body;
+
+export const setAvailable = tryCatchWrapper(async function (req,res) {
+    const {carid} = req.body;
     const query = `
     UPDATE cars
-    SET availability = 'available' 
-    WHERE CUSTOMERID = :customerid`;
-    console.log(customerid,contact_number)
+    SET STATUS = 'available' 
+    WHERE carid = :carid`;
+    console.log(carid)
     let connection = await OracleDB.getConnection();
-    connection.execute(query, {customerid } );
+    connection.execute(query, {carid } );
     connection.commit()
     connection.close();
     return res.status(200).json({message:"Entity altered successfuly"})
@@ -57,24 +52,39 @@ export const deleteRent = tryCatchWrapper(async function (req,res) {
 });
 
 export const getCarById = tryCatchWrapper(async function (req,res){
-    const {carid} = req.body;
-    const query = `SELECT * FROM cars WHERE carid = :carid`;
+    const {carid} = req.params;
+    const query = `SELECT * FROM CAR WHERE carid = :carid`;
     let connection = await OracleDB.getConnection();
     let results = await connection.execute(query, {carid});
     let data = results.rows;
     connection.close()
-    return res.status(200).json({cars: data});
+    return res.status(200).json({car: data});
 
 });
 
-export const getRentedCars = tryCatchWrapper(async function (req, res) {
-    
-    let query = `SELECT * FROM Cars 
-    WHERE availability == 0;`
+export const deleteLatestTransaction = tryCatchWrapper(async function (req,res) {
+    let query1 = `SELECT MAX(TRANSACTIONID) FROM RENTALTRANSACTION`
     let connection = await OracleDB.getConnection();
-    let result = await connection.execute(query)
-    let rows = result.rows;
+    let latestTransaction = await connection.execute(query1);
+    let query2 = `DELETE FROM RENTALTRANSACTION WHERE TRANSACTIONID =:TRANSACTIONID`;
+    connection.execute(query2),{latestTransaction};
     connection.close();
-    return res.status(201).json({availableCars: `${rows}`});
+    return res.status(201).json({message:"Table altered successfuly"});
 })
+
+export const addNewTransaction = tryCatchWrapper(async function (req,res) {
+    const {totalcost, rentdate,returndate,carid} = req.body;
+    let query1 = `SELECT MAX(TRANSACTIONID) FROM RENTALTRANSACTION`
+    let connection = await OracleDB.getConnection();
+    let latestTransaction = await connection.execute(query1);
+    latestTransaction = latestTransaction + 1;
+    let query2 = `INSERT INTO RENTALTRANSACTION(TRANSACTIONID,RENTALDATE,RETURNDATE,TOTALCOST,CARID)
+                    VALUES (${latestTransaction},'${rentdate},'${returndate}',${totalcost},${carid});`
+    connection.execute(query2);
+    connection.close();
+    return res.status(201).json({message:"New transaction added successfuly"});
+
+})
+
+
 
