@@ -24,6 +24,15 @@ export const getAvailableCars = tryCatchWrapper(async function (req, res) {
     return res.status(201).json({availableCars: rows});
 })
 
+export const getUnavailableCars = tryCatchWrapper(async function (req, res) {
+    let query = `SELECT * FROM car WHERE status = 'not available'`;
+    let connection = await OracleDB.getConnection();
+    let result = await connection.execute(query)
+    let rows = result.rows;
+    connection.close();
+    return res.status(201).json({availableCars: rows});
+})
+
 
 export const getPayment = tryCatchWrapper(async function (req,res){
     const {paymentid, paymentmethod, amount, paymentdate} = req.body;
