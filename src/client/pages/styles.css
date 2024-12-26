@@ -282,7 +282,7 @@ body {
     outline: none; /* Varsayılan outline'ı kaldır */
 }
 
-#get-customerId input[type="submit"] {
+#get-customerId button {
     width: 457px; /* Genişlik */
     padding: 10px; /* İç boşluk */
     font-size: 16px; /* Yazı boyutu */
@@ -295,12 +295,12 @@ body {
     transition: background-color 0.3s ease, transform 0.2s ease; /* Geçiş ve efekt */
 }
 
-#get-customerId input[type="submit"]:hover {
+#get-customerId button:hover {
     background-color: #0056b3; /* Hover efekti için koyu mavi */
     transform: scale(1.05); /* Hover sırasında hafif büyüt */
 }
 
-#get-customerId input[type="submit"]:active {
+#get-customerId button:active {
     background-color: #003d80; /* Tıklama efekti için daha koyu mavi */
     transform: scale(0.95); /* Tıklarken hafif küçült */
 }
