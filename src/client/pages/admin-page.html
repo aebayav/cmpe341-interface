@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RENT A CAR</title>
+</head>
+<body>
+    <div id="item1">
+        <div id="main-div">
+
+            <div id="text1">
+                <h3>Admin Actions</h3>
+            </div>
+            
+            <div id="car-list">
+                <ul>
+                    <li>
+                        <span>Car 1 bilgi </span>
+                        <button class="admin-button" onclick="deleteCar(1)">Delete</button>
+                    </li>
+                    <li>
+                        <span>Car 2</span>
+                        <button class="admin-button" onclick="deleteCar(2)">Delete</button>
+                    </li>
+                    <li>
+                        <span>Car 3</span>
+                        <button class="admin-button" onclick="deleteCar(3)">Delete</button>
+                    </li>
+                    <li>
+                        <span>Car 4</span>
+                        <button class="admin-button" onclick="deleteCar(4)">Delete</button>
+                    </li>
+                    <!-- Add more cars here as needed -->
+                </ul>
+            </div>
+
+            <div id="text1">
+                <h3>Adding a Car</h3>
+        </div>
+
+        <div id="adding-car">
+            <form id="add-car-form">
+                <label for="car-brand">Car Brand:</label>
+                <input type="text" id="car-brand" name="car-brand" required><br>
+                
+                <label for="car-id">Car ID:</label>
+                <input type="text" id="car-id" name="car-id" required><br>
+                
+                <label for="car-model">Car Model:</label>
+                <input type="text" id="car-model" name="car-model" required><br>
+                
+                <label for="car-year">Car Year:</label>
+                <input type="number" id="car-year" name="car-year" required><br>
+                
+                <label for="rental-rate">Rental Rate:</label>
+                <input type="number" id="rental-rate" name="rental-rate" step="0.01" required>
+
+                <button class="add-button" type="submit">Add New Car</button>
+
+            </form>
+        </div>
+
+
+
+    </div>
+    <script src="./scripts/delete-page.js"></script>
+    <script>
+        function deleteCar(carId) {
+            // Implement delete functionality here
+            console.log("Deleting car with ID:", carId);
+        }
+    </script>
+</body>
+</html>
