@@ -1,5 +1,5 @@
 import express from "express"
-import {addCar, addNewTransaction, changeRentDate, deleteCar, deleteLatestTransaction, getAllCars, getAvailableCars, getCarById, getPayment, getUnavailableCars, setAvailable } from "../controllers/user.controllers.js"
+import {addCar, addNewTransaction, changeRentDate, deleteCar, deleteLatestTransaction, getAllCarInfo, getAllCars, getAvailableCars, getCarById, getPayment, getUnavailableCars, setAvailable } from "../controllers/user.controllers.js"
 
 const router = express.Router();
 router.route('/').get(getAllCars);

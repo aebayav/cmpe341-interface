@@ -54,41 +54,24 @@ document.addEventListener('DOMContentLoaded', function(){
                 </div>
                 <div class="input-container">
                     <label for="total-car-price">Price:</label>
-                    ${Math.trunc(car[7] * daysDiff)}$/Month
+                    ${Math.trunc(car[7] * daysDiff)}$
                 </div>
 
             </div>`;
         
     }
-    const form = document.getElementById("payment-form");
-    form.addEventListener('submit', handleSubmit);
-    function handleSubmit(event){
-        event.preventDefault();
-        const formData = new FormData(form);
-        const jsonData = JSON.stringify(Object.fromEntries(formData));
 
-        fetch("http://127.0.0.1:8080/user/payment/new", {
-            method: "POST",
-            headers: {
-                'Content-Type' : 'application/json'
-            },
-            body: jsonData
-        })
-        .then(response => response.json())
-        .then(result => {
-            console.log('Server response:', result)
-        })
-        .catch(error => {
-            console.log('Error:', error)
-        });
-
-        function sendTransactionData(){
-            
-        }
-    }
     
 })
 
+const paymentBtn = document.getElementById("payment-btn");
+paymentBtn.addEventListener('click', function(event){
+    event.preventDefault();
+    alert("Reservation added successfuly!")
+    redirect()
+
+})
+
 function redirect(){
-    window.location.assign('home-page.html');
+    window.location.href = "home-page.html";
 }

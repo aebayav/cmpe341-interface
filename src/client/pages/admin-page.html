@@ -15,7 +15,7 @@
             </div>
             
             <div id="car-list">
-                <ul>
+                <ul id = "car-ul">
                     <li>
                         <span>Car 1 bilgi </span>
                         <button class="admin-button" onclick="deleteCar(1)">Delete</button>
@@ -42,20 +42,22 @@
 
         <div id="adding-car">
             <form id="add-car-form">
-                <label for="car-brand">Car Brand:</label>
-                <input type="text" id="car-brand" name="car-brand" required><br>
+                <label for="carid">Car ID:</label>
+                <input type="number" id="carid" name="carid" required><br>
+
+                <label for="brand">Car Brand:</label>
+                <input type="text" id="brand" name="brand" required><br>
                 
-                <label for="car-id">Car ID:</label>
-                <input type="text" id="car-id" name="car-id" required><br>
                 
-                <label for="car-model">Car Model:</label>
-                <input type="text" id="car-model" name="car-model" required><br>
                 
-                <label for="car-year">Car Year:</label>
-                <input type="number" id="car-year" name="car-year" required><br>
+                <label for="carmodel">Car Model:</label>
+                <input type="text" id="carmodel" name="carmodel" required><br>
                 
-                <label for="rental-rate">Rental Rate:</label>
-                <input type="number" id="rental-rate" name="rental-rate" step="0.01" required>
+                <label for="caryear">Car Year:</label>
+                <input type="number" id="caryear" name="caryear" required><br>
+                
+                <label for="rentalrate">Rental Rate:</label>
+                <input type="number" id="rentalrate" name="rentalrate" step="0.01" required>
 
                 <button class="add-button" type="submit">Add New Car</button>
 
@@ -65,12 +67,7 @@
 
 
     </div>
-    <script src="./scripts/delete-page.js"></script>
-    <script>
-        function deleteCar(carId) {
-            // Implement delete functionality here
-            console.log("Deleting car with ID:", carId);
-        }
-    </script>
+    <script src="./scripts/admin-page.js"></script>
+    
 </body>
 </html>
