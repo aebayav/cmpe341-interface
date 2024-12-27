@@ -1,445 +1,375 @@
 body {
-    font-family: Arial, sans-serif; /* Yazı tipi */
-    background-image: url('images/background.jpg'); /* Arka plan resmi */
-    background-size: cover; /* Resmi tam ekran yap */
-    background-repeat: no-repeat; /* Resmi tekrar etme */
-    background-position: center center; /* Resmi yatay ve dikey ortala */
+    font-family: Arial, sans-serif;
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
     margin: 0;
     padding: 0;
-    color: #ffffff; /* Genel metin rengi */
-    min-height: 100vh; /* Minimum yüksekliği tarayıcı penceresi kadar yap */
-}
-
-#header {
-    margin-top: 20px; /* Üst boşluk */
-    margin-left: 50px; /* Sol boşluk */
-}
-
-#item1 {
-    margin-top: 20px; /* Üst boşluk */
-    margin-left: 50px; /* Sol boşluk */
-    padding-top: 60px; /* Üstten boşluk ekle */
-}
-
-#main-div {
-    max-width: 600px; /* Genişliği sınırla */
-    margin: 50px auto; /* Ortala */
-    background-color: rgba(138, 137, 137, 0.9); /* Opak arka plan */
+    color: #ffffff;
+    min-height: 100vh;
+    }
+    #header {
+    margin-top: 20px;
+    margin-left: 50px;
+    }
+    #item1 {
+    margin-top: 20px;
+    margin-left: 50px;
+    padding-top: 60px;
+    }
+    #main-div {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: rgba(138, 137, 137, 0.9);
     padding: 20px;
-    border-radius: 10px; /* Köşeleri yuvarla */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Daha belirgin gölge */
-}
-
-#search-bar {
-    display: flex; /* Flexbox kullan */
-    flex-direction: row; /* Elemanları yan yana düzenle */
-    align-items: center; /* Elemanları dikeyde ortala */
-    gap: 10px; /* Elemanlar arasındaki boşluk */
-    color: #000; /* Siyah renk */
-    margin: 20px auto; /* Ortala */
-    padding: 20px; /* İç boşluk */
-    max-width: 600px; /* Genişliği sınırla */
-    background-color: #f8f9fa; /* Açık gri arka plan */
-    border-radius: 10px; /* Köşeleri yuvarla */
-}
-
-#search-bar label {
-    font-weight: bold; /* Kalın yazı */
-    margin-bottom: 5px; /* Alt boşluk */
-    display: block; /* Her etiket tam satır kaplasın */
-}
-
-#search-bar input {
-    flex-grow: 1; /* Esneklik */
-    max-width: 400px; /* Maksimum genişlik */
-    padding: 10px; /* İç boşluk */
-    border: 1px solid #ccc; /* Gri çerçeve */
-    border-radius: 5px; /* Köşeleri yuvarla */
-    box-sizing: border-box; /* Çerçeve ve padding dahil genişliği kontrol et */
-}
-
-#search-bar button {
-    padding: 10px 20px; /* İç boşluk */
-    font-size: 16px; /* Yazı boyutu */
-    background-color: #007bff; /* Mavi arka plan */
-    color: #fff; /* Beyaz yazı rengi */
-    border: none; /* Çerçeve kaldır */
-    border-radius: 5px; /* Köşeleri yuvarla */
-    cursor: pointer; /* Fare imlecini değiştir */
-    transition: background-color 0.3s ease; /* Geçiş efekti */
-}
-
-#search-bar button:hover {
-    background-color: #0056b3; /* Daha koyu mavi */
-}
-
-#text1 {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    #search-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    color: #000;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    }
+    #search-bar label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    }
+    #search-bar input {
+    flex-grow: 1;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    }
+    #search-bar button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    }
+    #search-bar button:hover {
+    background-color: #0056b3;
+    }
+    #text1 {
     text-align: center;
-}
-
-#user-actions {
-    border-radius: 10px; /* Köşeleri yuvarla */
-    display: flex; /* Flexbox kullan */
-    justify-content: center; /* Yatayda ortala */
-    align-items: center; /* Dikeyde ortala */
-    gap: 10px; /* Elemanlar arasındaki boşluk */
-    color: #000; /* Siyah renk */
-    margin: 20px auto; /* Ortala */
-    padding: 20px; /* İç boşluk */
-    max-width: 600px; /* Genişliği sınırla */
-    background-color: #f8f9fa; /* Açık gri arka plan */
-}
-
-#user-actions button {
-    padding: 10px 20px; /* İç boşluk */
-    font-size: 16px; /* Yazı boyutu */
-    background-color: #007bff; /* Mavi arka plan */
-    color: #fff; /* Beyaz yazı rengi */
-    border: none; /* Çerçeve kaldır */
-    border-radius: 5px; /* Köşeleri yuvarla */
-    cursor: pointer; /* Fare imlecini değiştir */
-    transition: background-color 0.3s ease; /* Geçiş efekti */
-}
-
-#user-actions button:hover {
-    background-color: #0056b3; /* Daha koyu mavi */
-}
-
-/* Genel Payment Div Ayarları */
-#payment-div {
-    color: black; /* Yazı rengi siyah */
-    margin: 20px auto; /* Üst ve alt boşluk 20px, sağ ve sol ortalanmış */
-    padding: 20px; /* İç boşluk */
-    background-color: #f8f9fa; /* Açık gri arka plan rengi */
-    border: 1px solid #ccc; /* Gri renkli çerçeve */
-    border-radius: 10px; /* Köşeleri yuvarlat */
-    width: 100%; /* Genişlik %100 */
-    max-width: 500px; /* Maksimum genişlik 500px */
-    box-sizing: border-box; /* Padding ve border genişlik hesaplamaya dahil */
-}
-
-/* Label Etiketlerinin Stili */
-#payment-div label {
-    font-weight: bold; /* Kalın yazı tipi */
-    margin-bottom: 5px; /* Alt boşluk */
-    display: block; /* Etiketi tam genişlikte göster */
-}
-
-/* Input Alanları için Konteyner Stili */
-.input-container {
-    margin-bottom: 15px; /* Her input arasına alt boşluk */
-}
-
-/* Input Alanlarının Stili */
-#payment-div input {
-    width: 100%; /* Genişlik %100 */
-    padding: 10px; /* İç boşluk */
-    border: 1px solid #ccc; /* Gri renkli kenarlık */
-    border-radius: 5px; /* Köşe yuvarlama */
-    box-sizing: border-box; /* Padding ve border dahil genişlik hesaplamasına */
-}
-
-/* Payment Butonunun Stili */
-#payment-btn {
-    width: 100%; /* Genişlik %100 */
-    padding: 10px; /* İç boşluk */
-    background-color: #007bff; /* Mavi arka plan */
-    color: white; /* Beyaz yazı rengi */
-    border: none; /* Kenarlık yok */
-    border-radius: 5px; /* Köşe yuvarlama */
-    cursor: pointer; /* Fare simgesini el işareti yap */
-    font-size: 16px; /* Yazı boyutu */
-}
-
-/* Buton Hover Durumunda Renk Değişimi */
-#payment-btn:hover {
-    background-color: #0056b3; /* Buton üzerine gelindiğinde koyu mavi arka plan */
-}
-
-#car-info {
-    color: black; /* Yazı rengi siyah */
-    margin: 20px auto; /* Üst ve alt boşluk 20px, sağ ve sol ortalanmış */
-    padding: 20px; /* İç boşluk */
-    background-color: #f8f9fa; /* Açık gri arka plan rengi */
-    border: 1px solid #ccc; /* Gri renkli çerçeve */
-    border-radius: 10px; /* Köşeleri yuvarlat */
-    width: 100%; /* Genişlik %100 */
-    max-width: 500px; /* Maksimum genişlik 500px */
-    box-sizing: border-box; /* Padding ve border genişlik hesaplamaya dahil */
-    display: block; /* Flex yerine blok düzeni */
-    text-align: center; /* Yazıların ortalanmasını sağlar */
-}
-
-#car-image {
-    width: 100%; /* Resmin genişliği */
-    height: 250px; /* Resmin yüksekliği */
-    overflow: hidden; /* Resmin dışarı taşmasını engelle */
-}
-
-#car-image img {
-    width: 100%; /* Resmin genişliğini div'e uydur */
-    height: 100%; /* Resmin yüksekliğini div'e uydur */
-    object-fit: cover; /* Resmi düzgün şekilde keserek göster */
-}
-
-.input-container {
-    margin-bottom: 15px; /* Alanlar arasında boşluk */
-}
-
-.input-container label {
-    font-weight: bold; /* Kalın yazı tipi */
-    margin-bottom: 5px; /* Alt boşluk */
-    display: block; /* Etiketi tam genişlikte göster */
-}
-
-.input-container input {
-    width: 100%; /* Inputların tam genişlikte olmasını sağla */
-    padding: 10px; /* İç boşluk */
-    border: 1px solid #ccc; /* Sınır rengi */
-    border-radius: 5px; /* Yuvarlatılmış köşeler */
-    background-color: #fff; /* Arka plan rengi beyaz */
-    box-sizing: border-box; /* Border ve padding'in genişlik hesaplamasına dahil edilmesi */
-}
-
-.input-container input:disabled {
-    background-color: #e9ecef; /* Okunabilir olan inputların arka planını aç */
-}
-
-#cars {
+    }
+    #user-actions {
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #000;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    background-color: #f8f9fa;
+    }
+    #user-actions button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    }
+    #user-actions button:hover {
+    background-color: #0056b3;
+    }
+    #payment-div {
+    color: black;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+    }
+    #payment-div label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    }
+    .input-container {
+    margin-bottom: 15px;
+    }
+    #payment-div input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    }
+    #payment-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    }
+    #payment-btn:hover {
+    background-color: #0056b3;
+    }
+    #car-info {
+    color: black;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+    display: block;
+    text-align: center;
+    }
+    #car-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    }
+    #car-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    }
+    .input-container {
+    margin-bottom: 15px;
+    }
+    .input-container label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    }
+    .input-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-sizing: border-box;
+    }
+    .input-container input:disabled {
+    background-color: #e9ecef;
+    }
+    #cars {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Kartlar arasındaki boşluk */
+    gap: 20px;
     justify-content: space-between;
-}
-
-.car-card {
-    width: calc(50% - 10px); /* 4 kart yan yana olacak şekilde genişlik ayarı */
+    }
+    .car-card {
+    width: calc(50% - 10px);
     box-sizing: border-box;
     cursor: pointer;
-    border: 1px solid #ccc; /* Sınır ekleyerek kartları belirginleştirebilirsiniz */
-    border-radius: 8px; /* Kart köşelerini yuvarlamak için */
+    border: 1px solid #ccc;
+    border-radius: 8px;
     overflow: hidden;
-}
-
-.car-img {
+    }
+    .car-img {
     width: 100%;
-    height: 250px; /* Resmin yüksekliği */
-    object-fit: cover; /* Resmi kapsar, kesilmesine neden olabilir */
-}
-
-.car-content {
+    height: 250px;
+    object-fit: cover;
+    }
+    .car-content {
     padding: 15px;
     background-color: #fff;
-}
-
-.car-content h3 {
-    margin: 0 0 10px; /* Başlık altında boşluk bırak */
+    }
+    .car-content h3 {
+    margin: 0 0 10px;
     font-size: 18px;
-}
-
-.car-content p {
+    }
+    .car-content p {
     margin: 0;
     font-size: 14px;
-}
-
-.car-card:hover {
-    transform: scale(1.05); /* Hover durumunda hafif büyüme */
-    transition: transform 0.3s ease; /* Geçiş efekti */
-}
-
-
-
-#get-customerId {
-    margin-top: 20px; /* Üst boşluk */
-    margin-left: 50px; /* Sol boşluk */
-    margin-right: 50px; /* Sağ boşluk */
-    padding: 20px; /* İç boşluk */
-    background-color: #f8f9fa; /* Açık gri arka plan */
-    border: 1px solid #ddd; /* Açık gri çerçeve */
-    border-radius: 5px; /* Köşeleri yuvarla */
-}
-
-#get-customerId label {
+    }
+    .car-card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+    }
+    #get-customerId {
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    }
+    #get-customerId label {
     color: #000;
-    font-weight: bold; /* Kalın yazı */
-    margin-bottom: 5px; /* Alt boşluk */
-}
-
-#get-customerId input[type="text"] {
-    width: 400px; /* Genişlik */
-    padding: 10px; /* İç boşluk */
-    font-size: 16px; /* Yazı boyutu */
-    border: 2px solid #ddd; /* Çerçeve rengi */
-    border-radius: 5px; /* Köşeleri yuvarla */
-    margin-bottom: 15px; /* Alt boşluk */
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* İç gölge efekti */
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Geçiş efekti */
-}
-
-#get-customerId input[type="text"]:focus {
-    border-color: #007bff; /* Odaklanınca mavi çerçeve */
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Mavi dış gölge */
-    outline: none; /* Varsayılan outline'ı kaldır */
-}
-
-#get-customerId button {
-    width: 457px; /* Genişlik */
-    padding: 10px; /* İç boşluk */
-    font-size: 16px; /* Yazı boyutu */
-    font-weight: bold; /* Yazıyı kalın yap */
-    background-color: #007bff; /* Varsayılan mavi arka plan */
-    color: #ffffff; /* Beyaz yazı rengi */
-    border: none; /* Çerçeve kaldır */
-    border-radius: 8px; /* Köşeleri yuvarla */
-    cursor: pointer; /* Fare imlecini el yap */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Geçiş ve efekt */
-}
-
-#get-customerId button:hover {
-    background-color: #0056b3; /* Hover efekti için koyu mavi */
-    transform: scale(1.05); /* Hover sırasında hafif büyüt */
-}
-
-#get-customerId button:active {
-    background-color: #003d80; /* Tıklama efekti için daha koyu mavi */
-    transform: scale(0.95); /* Tıklarken hafif küçült */
-}
-
-#car-list {
-    display: flex; /* Flexbox kullan */
-    flex-direction: row; /* Elemanları yan yana düzenle */
-    align-items: center; /* Elemanları dikeyde ortala */
-    gap: 10px; /* Elemanlar arasındaki boşluk */
-    color: #000; /* Siyah renk */
-    margin: 20px auto; /* Ortala */
-    padding: 20px; /* İç boşluk */
-    max-width: 600px; /* Genişliği sınırla */
-    background-color: #f8f9fa; /* Açık gri arka plan */
-    border-radius: 10px; /* Köşeleri yuvarla */
-}
-
-
-#car-list ul li button.admin-button {
-    padding: 5px 15px; /* İç boşluk */
-    font-size: 16px; /* Yazı boyutu */
-    background-color: #007bff; /* Mavi arka plan */
-    color: #fff; /* Beyaz yazı rengi */
-    border: none; /* Çerçeve kaldır */
-    border-radius: 5px; /* Köşeleri yuvarla */
-    cursor: pointer; /* Fare imlecini değiştir */
-    transition: background-color 0.3s ease; /* Geçiş efekti */
-    margin-bottom: 10px; /* Adds space below each list item */
-
-}
-
-
-#adding-car {
-    display: flex; /* Flexbox kullan */
-    flex-direction: row; /* Elemanları yan yana düzenle */
-    align-items: center; /* Elemanları dikeyde ortala */
-    gap: 10px; /* Elemanlar arasındaki boşluk */
-    color: #000; /* Siyah renk */
-    margin: 20px auto; /* Ortala */
-    padding: 20px; /* İç boşluk */
-    max-width: 600px; /* Genişliği sınırla */
-    background-color: #f8f9fa; /* Açık gri arka plan */
-    border-radius: 10px; /* Köşeleri yuvarla */
-}
-
-#add-car-form label {
-    font-weight: bold; /* Kalın yazı tipi */
-    margin-bottom: 5px; /* Alt boşluk */
-    display: block; /* Etiketi tam genişlikte göster */
-}
-
-
-#add-car-form input {
-    flex-grow: 1; /* Esneklik */
-    max-width: 400px; /* Maksimum genişlik */
-    padding: 10px; /* İç boşluk */
-    border: 1px solid #ccc; /* Gri çerçeve */
-    border-radius: 5px; /* Köşeleri yuvarla */
-    box-sizing: border-box; /* Çerçeve ve padding dahil genişliği kontrol et */
-    margin-bottom: 10px; /* Adds space below each list item */
-    
-}
-#add-car-form label {
-    font-weight: bold; /* Kalın yazı tipi */
-    margin-right: 10px; /* Sağ boşluk */
-    display: inline-block; /* Inline-block display for label */
-}
-
-#add-car-form input {
-    max-width: 400px; /* Maksimum genişlik */
-    padding: 10px; /* İç boşluk */
-    border: 1px solid #ccc; /* Gri çerçeve */
-    border-radius: 5px; /* Köşeleri yuvarla */
-    box-sizing: border-box; /* Çerçeve ve padding dahil genişliği kontrol et */
-    margin-bottom: 10px; /* Adds space below each input item */
-}
-
-/* Wrap each label-input pair in a div with this class */
-.add-car-form-group {
-    display: flex; /* Use flexbox for alignment */
-    align-items: center; /* Vertically center items */
-    margin-bottom: 10px; /* Space between form groups */
-}
-
-
-#add-car-form button:hover {
-    background-color: #0056b3; /* Daha koyu mavi */
-}
-
-#add-car-form {
+    font-weight: bold;
+    margin-bottom: 5px;
+    }
+    #get-customerId input[type="text"] {
+    width: 400px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    #get-customerId input[type="text"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+    }
+    #get-customerId button {
+    width: 457px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    #get-customerId button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    }
+    #get-customerId button:active {
+    background-color: #003d80;
+    transform: scale(0.95);
+    }
+    #car-list {
     display: flex;
-    flex-direction: column; /* Stack form groups vertically */
-}
-
-.form-group {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    color: #000;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    }
+    #car-list ul li button.admin-button {
+    padding: 5px 15px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+    }
+    #adding-car {
     display: flex;
-    align-items: center; /* Vertically center items */
-    margin-bottom: 10px; /* Space between form groups */
-}
-
-.form-group label {
-    width: 120px; /* Fixed width for labels, adjust as needed */
-    margin-right: 10px; /* Space between label and input */
-}
-
-.form-group input {
-    flex-grow: 1; /* Input will take remaining space */
-}
-#add-car-form {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    color: #000;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    }
+    #add-car-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    }
+    #add-car-form input {
+    flex-grow: 1;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    }
+    #add-car-form label {
+    font-weight: bold;
+    margin-right: 10px;
+    display: inline-block;
+    }
+    #add-car-form input {
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    }
+    .add-car-form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    }
+    #add-car-form button:hover {
+    background-color: #0056b3;
+    }
+    #add-car-form {
+    display: flex;
+    flex-direction: column;
+    }
+    .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    }
+    .form-group label {
+    width: 120px;
+    margin-right: 10px;
+    }
+    .form-group input {
+    flex-grow: 1;
+    }
+    #add-car-form {
     display: grid;
-    grid-template-columns: 1fr 2fr; /* Two columns: one for labels, one wider for inputs */
-    gap: 1px 3px; /* Vertical and horizontal gap between grid items */
-}
-
-#add-car-form label {
-    grid-column: 1 / 2; /* Labels in the first column */
-    text-align: right; /* Align text to the right */
-    padding-right: 10px; /* Space between label and input */
-}
-
-#add-car-form input {
-    grid-column: 2 / 3; /* Inputs in the second column */
-    width: 100%; /* Full width of the second column */
-}
-
-#add-car-form button {
-    padding: 10px 20px; /* İç boşluk */
-    font-size: 16px; /* Yazı boyutu */
-    background-color: #007bff; /* Mavi arka plan */
-    color: #fff; /* Beyaz yazı rengi */
-    border: none; /* Çerçeve kaldır */
-    border-radius: 5px; /* Köşeleri yuvarla */
-    cursor: pointer; /* Fare imlecini değiştir */
-    transition: background-color 0.3s ease; /* Geçiş efekti */
-    margin-top: 10px; /* Space above the button */
-    width: 100%; /* This makes the button span the full width */
-    box-sizing: border-box; /* Padding ve border dahil genişlik */
-}
-
-#car-list ul li button.admin-button:hover {
-    background-color: #0056b3; /* Daha koyu mavi */
-}
+    grid-template-columns: 1fr 2fr;
+    gap: 1px 3px;
+    }
+    #add-car-form label {
+    grid-column: 1 / 2;
+    text-align: right;
+    padding-right: 10px;
+    }
+    #add-car-form input {
+    grid-column: 2 / 3;
+    width: 100%;
+    }
+    #add-car-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    }
+    #car-list ul li button.admin-button:hover {
+    background-color: #0056b3;
+    }
