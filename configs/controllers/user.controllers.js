@@ -106,13 +106,29 @@ export const addCar = tryCatchWrapper(async function (req,res) {
 
 export const deleteCar = tryCatchWrapper(async function (req,res) {
     const {carid} = req.body;
-    let query = `DELETE FROM car WHERE carid =:carid`;
+    let query = `DELETE FROM car WHERE carid =${carid}`;
     let connection = await OracleDB.getConnection();
-    connection.execute(query, {carid});
+    connection.execute(query);
     connection.commit();
     connection.close();
     return res.status(201).json({message: "Car deleted from db"});
 })
 
-
-
+export const changeRentDate = tryCatchWrapper(async function (req,res) {
+   
+    const {carid,start_date,end_date} = req.body
+    console.log(carid,start_date,end_date);
+    console.log(typeof(start_date))
+    const query = `UPDATE car 
+    SET AVAILDATESTART = TO_TIMESTAMP(:start_date, 'YYYY-MM-DD HH24:MI:SS'), 
+        AVAILDATEEND = TO_TIMESTAMP(:end_date, 'YYYY-MM-DD HH24:MI:SS')
+    WHERE carid = :carid`
+    
+    
+    let connection = await OracleDB.getConnection();
+    connection.execute(query, {start_date,end_date,carid});
+    connection.commit();
+    connection.close();
+    return res.status(201).json({message:"Car updated successfuly"})
+    
+})

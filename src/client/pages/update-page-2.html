@@ -40,14 +40,15 @@
 
             <div id="search-bar">
                 <label for="car-rent-start-date-update">New Start Date</label><!-- buraya Javascript kodu gelecek o günün tarihini min olarak vericek-->
-                <input type="date" name="car-rent-start-date-update" id="car-rent-start-date-update">
+                <input type="date" name="car-rent-start-date-update" id="car-rent-start-date-update" required>
                 <label for="car-rent-end-date-update">New End Date</label><!-- buraya Javascript kodu gelecek o günün tarihini min olarak vericek-->
-                <input type="date" name="car-rent-end-date-update" id="car-rent-end-date-update">
-                <button>Update</button>
+                <input type="date" name="car-rent-end-date-update" id="car-rent-end-date-update" required>
+                <button id = "submit-btn">Update</button>
             </div>
 
             
         </div>
     </div>
+    <script src="./scripts/update-page2.js"></script>
 </body>
 </html>
